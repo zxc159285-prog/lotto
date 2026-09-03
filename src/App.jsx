@@ -59,17 +59,26 @@ export default function App() {
       <p className="subtitle">자신에게 의미 있는 번호를 마음껏 입력하세요.<br/>당신의 번호를 기반으로 완벽한 조합을 만들어 드립니다.</p>
       
       {!result ? (
-        <form onSubmit={handleSubmit} className="input-form">
-          <input 
-            type="text" 
-            ref={numsRef} 
-            placeholder="예: 7, 12, 33 (쉼표나 띄어쓰기로 구분)" 
-          />
-          <p className="help-text">※ 번호를 안 넣으시면 완전 자동으로 추첨됩니다.</p>
-          <button type="submit">나만의 번호 조합 시작하기</button>
-        </form>
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+          <form onSubmit={handleSubmit} className="input-form" style={{ width: '100%', marginBottom: '20px' }}>
+            <input 
+              type="text" 
+              ref={numsRef} 
+              placeholder="예: 7, 12, 33 (쉼표나 띄어쓰기로 구분)" 
+            />
+            <p className="help-text">※ 번호를 안 넣으시면 완전 자동으로 추첨됩니다.</p>
+            <button type="submit">나만의 번호 조합 시작하기</button>
+          </form>
+          {/* 입력 폼 하단 띠 배너 */}
+          <iframe src="/coupang-banner.html" width="320" height="80" frameBorder="0" scrolling="no" style={{ border: 'none' }}></iframe>
+        </div>
       ) : (
         <div className="result-area">
+          {/* 결과 화면 상단 띠 배너 */}
+          <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '20px' }}>
+            <iframe src="/coupang-banner.html" width="320" height="80" frameBorder="0" scrolling="no" style={{ border: 'none' }}></iframe>
+          </div>
+          
           <div className="lotto-section">
             <h3>나만의 행운 조합 (무료 4게임)</h3>
             <div className="lotto-board">
