@@ -94,7 +94,7 @@ export default function App() {
             </div>
           ) : (
             <button className="ad-btn" onClick={handleWatchAd}>
-              🎥 10초 스폰서 광고 보고 마지막 1게임 마저 채우기
+              🎥 마지막 1줄 (10초 광고 시청)
             </button>
           )}
 
