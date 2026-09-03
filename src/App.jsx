@@ -94,7 +94,7 @@ export default function App() {
             </div>
           ) : (
             <button className="ad-btn" onClick={handleWatchAd}>
-              🎥 5초 광고 보고 마지막 1게임 마저 채우기
+              🎥 10초 스폰서 광고 보고 마지막 1게임 마저 채우기
             </button>
           )}
 
@@ -104,8 +104,13 @@ export default function App() {
 
       {showAd && (
         <div className="ad-modal">
-          <div className="ad-content">
+          <div className="ad-content" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
             <h2>스폰서 광고 시청 중...</h2>
+            {/* 리액트 렌더링 충돌을 막기 위한 안전한 iframe 배너 호출 */}
+            <iframe src="/coupang.html" width="300" height="250" frameBorder="0" scrolling="no" style={{ margin: '15px 0', border: 'none' }}></iframe>
+            <p style={{ fontSize: '11px', color: '#888', marginBottom: '15px', wordBreak: 'keep-all' }}>
+              "이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다."
+            </p>
             <p>마지막 게임 지급까지 남은 시간: <strong>{adTime}</strong>초</p>
           </div>
         </div>
