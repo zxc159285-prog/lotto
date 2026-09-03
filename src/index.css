@@ -1,0 +1,221 @@
+/* 앱 전체 글로벌 스타일 */
+:root {
+  font-family: 'Pretendard', -apple-system, sans-serif;
+  background-color: #f8fafc;
+  color: #333;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  background: white;
+  padding: 2.5rem 2rem;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  width: 100%;
+  max-width: 440px;
+  text-align: center;
+  box-sizing: border-box;
+  margin: 2rem 0;
+}
+
+h1 { 
+  margin-top: 0; 
+  margin-bottom: 0.5rem;
+  color: #0f172a; 
+}
+
+.subtitle {
+  color: #64748b;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 2rem;
+}
+
+.input-form { 
+  display: flex; 
+  flex-direction: column; 
+  gap: 1rem; 
+}
+
+.input-form input { 
+  padding: 1.2rem 1rem; 
+  border: 2px solid #e2e8f0; 
+  border-radius: 12px; 
+  font-size: 1.1rem; 
+  outline: none;
+  text-align: center;
+  transition: all 0.2s;
+}
+
+.input-form input:focus {
+  border-color: #3b82f6;
+  background-color: #f8fafc;
+}
+
+.help-text {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #94a3b8;
+  text-align: right;
+}
+
+.input-form button { 
+  margin-top: 0.5rem;
+  padding: 1.2rem; 
+  background: #3b82f6; 
+  color: white; 
+  border: none; 
+  border-radius: 12px; 
+  font-size: 1.1rem; 
+  cursor: pointer; 
+  font-weight: 700;
+  transition: background 0.2s;
+  box-shadow: 0 4px 6px rgba(59, 130, 246, 0.25);
+}
+
+.input-form button:hover { 
+  background: #2563eb; 
+}
+
+.lotto-section { 
+  margin-bottom: 1.5rem; 
+  padding-bottom: 1.5rem;
+  border-bottom: 1px dashed #e2e8f0;
+}
+
+.lotto-section.extra-section {
+  border-bottom: none;
+  background-color: #fffbeb;
+  padding: 1.5rem 1rem;
+  border-radius: 12px;
+}
+
+.lotto-section h3 { 
+  margin-top: 0;
+  margin-bottom: 1.2rem; 
+  color: #475569; 
+  font-size: 1.1rem;
+}
+
+h3.highlight {
+  color: #d97706;
+}
+
+.lotto-board {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.lotto-row { 
+  display: flex; 
+  justify-content: center; 
+  gap: 0.6rem; 
+}
+
+.lotto-ball {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 800;
+  font-size: 1.1rem;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.4);
+  box-shadow: inset -2px -2px 5px rgba(0,0,0,0.2), 0 3px 5px rgba(0,0,0,0.1);
+  opacity: 0;
+  transform: translateY(20px) scale(0.8);
+  animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+@keyframes popIn {
+  to { 
+    opacity: 1; 
+    transform: translateY(0) scale(1); 
+  }
+}
+
+.ad-btn { 
+  background: #ef4444; 
+  color: white; 
+  border: none; 
+  padding: 1.2rem; 
+  width: 100%; 
+  border-radius: 12px; 
+  font-size: 1.1rem; 
+  cursor: pointer; 
+  font-weight: 700; 
+  margin-bottom: 1.5rem;
+  transition: all 0.2s;
+  box-shadow: 0 4px 6px rgba(239, 68, 68, 0.3);
+}
+
+.ad-btn:hover { 
+  background: #dc2626; 
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(239, 68, 68, 0.4);
+}
+
+.reset-btn { 
+  background: transparent; 
+  border: 1px solid #94a3b8; 
+  color: #64748b; 
+  padding: 1rem; 
+  width: 100%; 
+  border-radius: 12px; 
+  font-size: 1rem;
+  cursor: pointer; 
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.reset-btn:hover { 
+  background: #f1f5f9; 
+  color: #334155;
+}
+
+.ad-modal {
+  position: fixed; 
+  top: 0; 
+  left: 0; 
+  width: 100vw; 
+  height: 100vh;
+  background: rgba(0,0,0,0.85);
+  display: flex; 
+  justify-content: center; 
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(5px);
+}
+
+.ad-content { 
+  background: white; 
+  padding: 3rem; 
+  border-radius: 16px; 
+  text-align: center; 
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+
+.ad-content h2 {
+  margin-top: 0;
+  color: #1e293b;
+}
+
+.ad-content p {
+  font-size: 1.2rem;
+  color: #475569;
+}
+
+.ad-content strong {
+  color: #ef4444;
+  font-size: 1.5rem;
+}
